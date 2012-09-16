@@ -12,7 +12,7 @@
         private readonly IList<PropertyDefinition> properties;
 
         public PropertyBagBuilder()
-            : this("DynamicType" + Guid.NewGuid().ToString("N").ToUpper()) { }
+            : this(GenerateUniqueName("DynamicType")) { }
 
         public PropertyBagBuilder(string name)
         {
@@ -56,10 +56,11 @@
                 new Type[] { typeof(string), typeof(string) });
 
             AppDomain domain = AppDomain.CurrentDomain;
-            AssemblyName assemblyName = new AssemblyName("DynamicAssembly");
+            AssemblyName assemblyName = new AssemblyName(GenerateUniqueName("DynamicAssembly"));
             AssemblyBuilderAccess access = AssemblyBuilderAccess.Run;
             AssemblyBuilder assemblyBuilder = domain.DefineDynamicAssembly(assemblyName, access);
-            ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule("DynamicModule");
+            string moduleName = GenerateUniqueName("DynamicModule");
+            ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(moduleName);
             TypeBuilder typeBuilder = moduleBuilder.DefineType(
                 this.name,
                 TypeAttributes.Public | TypeAttributes.Sealed | TypeAttributes.Class);
@@ -186,6 +187,16 @@
             // Build and return the type!
             Type generatedType = typeBuilder.CreateType();
             return generatedType;
+        }
+
+        private static string GenerateUniqueName(string baseName) 
+        {
+            if (baseName == null)
+                throw new ArgumentNullException("baseName", "baseName should not be null.");
+            if (baseName.Length == 0)
+                throw new ArgumentException("baseName should not be an empty string.", "baseName");
+
+            return String.Concat(baseName, Guid.NewGuid().ToString("N").ToUpper());
         }
     }
 }
