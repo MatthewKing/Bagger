@@ -32,7 +32,7 @@ All types created by `PropertyBagBuilder` also implement the `IPropertyBag` inte
 
 ```csharp
 IPropertyBag bag = Activator.CreateInstance(type) as IPropertyBag;
-string name = bag.GetValue("Name");
+string name = (string)bag.GetValue("Name");
 bag.SetValue("Value1", 1);
 ```
 
