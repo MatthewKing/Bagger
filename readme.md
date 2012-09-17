@@ -1,10 +1,10 @@
 SimpleTypeBuilder
------------------
+=================
 
 This is just a quick project I threw together while learning how `Reflection.Emit` works.
 
 What can it do?
-===============
+---------------
 
 SimpleTypeBuilder facilitates the runtime construction of semi-dynamic, type-safe property bag types, using `Reflection.Emit`. These can then be used for data binding, etc.
 
@@ -37,7 +37,7 @@ bag.SetValue("Value1", 1);
 ```
 
 License and copyright
-=====================
+---------------------
 
 Copyright © Matthew King.
 
