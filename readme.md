@@ -36,9 +36,10 @@ string name = (string)bag.GetValue("Name");
 bag.SetValue("Value1", 1);
 ```
 
-License and copyright
----------------------
+Copyright
+---------
+Copyright Matthew King 2012.
 
-Copyright © Matthew King.
-
-Available under the [Boost Software License](http://www.boost.org/users/license.html).
+License
+-------
+SimpleTypeBuilder is licensed under the [Boost Software License](http://www.boost.org/users/license.html). Refer to license.txt for more information.
