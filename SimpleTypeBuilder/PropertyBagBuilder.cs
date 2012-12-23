@@ -21,6 +21,11 @@
         private readonly IList<PropertyDefinition> properties;
 
         /// <summary>
+        /// The type that has been built by this PropertyBagBuilder.
+        /// </summary>
+        private Type builtType;
+
+        /// <summary>
         /// Initializes a new instance of the PropertyBagBuilder class.
         /// </summary>
         public PropertyBagBuilder()
@@ -39,6 +44,7 @@
 
             this.name = name;
             this.properties = new List<PropertyDefinition>();
+            this.builtType = null;
         }
 
         /// <summary>
@@ -55,6 +61,10 @@
                 throw new ArgumentException("name should not be an empty string.", "name");
             if (type == null)
                 throw new ArgumentNullException("type", "type should not be null.");
+
+            if (this.builtType != null)
+                throw new InvalidOperationException(
+                    "Unable to add properties once a type has already been built.");
 
             foreach (PropertyDefinition property in this.properties)
             {
@@ -79,6 +89,9 @@
         /// </returns>
         public Type Build()
         {
+            if (this.builtType != null)
+                return this.builtType;
+
             MethodInfo stringEquals = typeof(String).GetMethod(
                 "op_Equality",
                 new Type[] { typeof(string), typeof(string) });
@@ -214,6 +227,7 @@
 
             // Build and return the type!
             Type generatedType = typeBuilder.CreateType();
+            this.builtType = generatedType;
             return generatedType;
         }
 

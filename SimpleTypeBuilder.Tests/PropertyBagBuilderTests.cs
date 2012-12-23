@@ -77,6 +77,18 @@
         }
 
         [Test]
+        public void AddProperty_TypeHasAlreadyBeenBuilt_ThrowsInvalidOperationException()
+        {
+            PropertyBagBuilder builder = new PropertyBagBuilder("name");
+
+            builder.Build();
+
+            Assert.That(() => builder.AddProperty("name", typeof(string)),
+                Throws.TypeOf<InvalidOperationException>()
+                      .And.Message.Contains("Unable to add properties once a type has already been built."));
+        }
+
+        [Test]
         public void AddProperty_ReturnsPropertyBagBuilderInstance()
         {
             PropertyBagBuilder builder = new PropertyBagBuilder("name");
