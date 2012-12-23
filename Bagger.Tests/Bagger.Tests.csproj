@@ -44,7 +44,7 @@
     <Compile Include="PropertyDefinitionTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleTypeBuilder\Bagger.csproj">
+    <ProjectReference Include="..\Bagger\Bagger.csproj">
       <Project>{05D4D89B-6688-4899-B763-FD7DC5BE4D10}</Project>
       <Name>Bagger</Name>
     </ProjectReference>

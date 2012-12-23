@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bagger", "SimpleTypeBuilder\Bagger.csproj", "{05D4D89B-6688-4899-B763-FD7DC5BE4D10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bagger", "Bagger\Bagger.csproj", "{05D4D89B-6688-4899-B763-FD7DC5BE4D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bagger.Tests", "SimpleTypeBuilder.Tests\Bagger.Tests.csproj", "{2C4C902C-0ECE-4891-95E8-4F7470B2CFCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bagger.Tests", "Bagger.Tests\Bagger.Tests.csproj", "{2C4C902C-0ECE-4891-95E8-4F7470B2CFCB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5D6C13F8-D390-4032-9B70-E536B6E542A0}"
 	ProjectSection(SolutionItems) = preProject
