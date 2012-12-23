@@ -1,12 +1,12 @@
-SimpleTypeBuilder
-=================
+Bagger
+======
 
-This is just a quick project I threw together while learning how `Reflection.Emit` works.
+This is just a quick project I threw together while learning how `Reflection.Emit` works. It is not really meant for actual use; it's just something I made for learning purposes.
 
 What can it do?
 ---------------
 
-SimpleTypeBuilder facilitates the runtime construction of semi-dynamic, type-safe property bag types, using `Reflection.Emit`. These can then be used for data binding, etc.
+Bagger facilitates the runtime construction of semi-dynamic, kinda-type-safe property bag types, using `Reflection.Emit`. These can then be used for data binding, etc.
 
 **Dynamically creating a type**:
 
@@ -42,4 +42,4 @@ Copyright Matthew King 2012.
 
 License
 -------
-SimpleTypeBuilder is licensed under the [Boost Software License](http://www.boost.org/users/license.html). Refer to license.txt for more information.
+Bagger is licensed under the [Boost Software License](http://www.boost.org/users/license.html). Refer to license.txt for more information.
