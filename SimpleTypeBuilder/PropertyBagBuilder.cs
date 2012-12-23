@@ -1,4 +1,4 @@
-﻿namespace SimpleTypeBuilder
+﻿namespace Bagger
 {
     using System;
     using System.Collections.Generic;

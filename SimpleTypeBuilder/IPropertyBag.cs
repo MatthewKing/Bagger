@@ -1,4 +1,4 @@
-﻿namespace SimpleTypeBuilder
+﻿namespace Bagger
 {
     /// <summary>
     /// Represents a property bag that can get and set properties by name.

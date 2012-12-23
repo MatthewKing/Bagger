@@ -1,6 +1,6 @@
-﻿[assembly: System.Reflection.AssemblyTitle("SimpleTypeBuilder")]
+﻿[assembly: System.Reflection.AssemblyTitle("Bagger")]
 [assembly: System.Reflection.AssemblyDescription("Facilitates the runtime construction of semi-dynamic, type-safe, property bag types")]
-[assembly: System.Reflection.AssemblyProduct("SimpleTypeBuilder")]
+[assembly: System.Reflection.AssemblyProduct("Bagger")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright © Matthew King 2012")]
 
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
@@ -10,4 +10,4 @@
 [assembly: System.Reflection.AssemblyFileVersion("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersion("1.0.0")]
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SimpleTypeBuilder.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Bagger.Tests")]

@@ -1,4 +1,4 @@
-﻿namespace SimpleTypeBuilder.Tests
+﻿namespace Bagger.Tests
 {
     using System;
     using System.Reflection;

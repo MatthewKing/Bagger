@@ -1,6 +1,6 @@
-﻿[assembly: System.Reflection.AssemblyTitle("SimpleTypeBuilder.Tests")]
-[assembly: System.Reflection.AssemblyDescription("Test assembly for SimpleTypeBuilder")]
-[assembly: System.Reflection.AssemblyProduct("SimpleTypeBuilder")]
+﻿[assembly: System.Reflection.AssemblyTitle("Bagger.Tests")]
+[assembly: System.Reflection.AssemblyDescription("Test assembly for Bagger")]
+[assembly: System.Reflection.AssemblyProduct("Bagger")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright © Matthew King 2012")]
 
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
