@@ -5,15 +5,31 @@
     using System.Reflection;
     using System.Reflection.Emit;
 
+    /// <summary>
+    /// Provides functionality to define and build a property bag type.
+    /// </summary>
     public sealed class PropertyBagBuilder
     {
+        /// <summary>
+        /// Name of the type that will be built.
+        /// </summary>
         private readonly string name;
 
+        /// <summary>
+        /// List of properties that will be included in the type that will be built.
+        /// </summary>
         private readonly IList<PropertyDefinition> properties;
 
+        /// <summary>
+        /// Initializes a new instance of the PropertyBagBuilder class.
+        /// </summary>
         public PropertyBagBuilder()
             : this(GenerateUniqueName("DynamicType")) { }
 
+        /// <summary>
+        /// Initializes a new instance of the PropertyBagBuilder class.
+        /// </summary>
+        /// <param name="name">The name of the type that will be built.</param>
         public PropertyBagBuilder(string name)
         {
             if (name == null)
@@ -25,6 +41,12 @@
             this.properties = new List<PropertyDefinition>();
         }
 
+        /// <summary>
+        /// Adds a property to this PropertyBagBuilder.
+        /// </summary>
+        /// <param name="name">Name of the property.</param>
+        /// <param name="type">Type of the property.</param>
+        /// <returns>This PropertyBagBuilder instance.</returns>
         public PropertyBagBuilder AddProperty(string name, Type type)
         {
             if (name == null)
@@ -49,6 +71,12 @@
             return this;
         }
 
+        /// <summary>
+        /// Builds a Type representing the property bag defined by this PropertyBagBuilder.
+        /// </summary>
+        /// <returns>
+        /// A Type representing the property bag defined by this PropertyBagBuilder.
+        /// </returns>
         public Type Build()
         {
             MethodInfo stringEquals = typeof(String).GetMethod(
@@ -189,7 +217,12 @@
             return generatedType;
         }
 
-        private static string GenerateUniqueName(string baseName) 
+        /// <summary>
+        /// Generates a unique name, given the specified base name.
+        /// </summary>
+        /// <param name="baseName">The base name that a unique name will be generated from.</param>
+        /// <returns>A unique name.</returns>
+        private static string GenerateUniqueName(string baseName)
         {
             if (baseName == null)
                 throw new ArgumentNullException("baseName", "baseName should not be null.");
